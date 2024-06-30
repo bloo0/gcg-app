@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Card for {{name}}</title>
+    <style>
+      body {
+        background-color: #ffcccc; /* Light red background color */
+        text-align: center;
+        font-family: Arial, sans-serif;
+        color: #333;
+      }
+      .blinking {
+        animation: blinkingText 1.5s infinite;
+      }
+      @keyframes blinkingText {
+        0% {
+          color: #000;
+        }
+        50% {
+          color: #fff;
+        }
+        100% {
+          color: #000;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hello <span class="blinking">{{name}}</span>!</h1>
+    <h1>{{message}}</h1>
+  </body>
+</html>
