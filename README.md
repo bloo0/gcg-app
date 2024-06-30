@@ -30,15 +30,15 @@
 
 
 ## Encountered Issues / Changes Made:
-1. Error: Unable to call API via container.
+1. Error: Unable to call API via container.\
    Solution:
    - Change from 'localhost' to '0.0.0.0' in index file (value should be string) - specific purpose related to how services are accessed within containers and from the host machine.
    - Created a healthcheck endpoint for initial checks: `curl -vvv localhost:3000/`
 
-2. Error: App unable to reach localstack.
+2. Error: App unable to reach localstack.\
    Solution:
    - Add localstack endpoint in s3Client configuration: `endpoint: 'http://localstack:4566'` - For service discovery within docker containers.
 
-3. Error: getaddrinfo ENOTFOUND demo.localstack
+3. Error: getaddrinfo ENOTFOUND demo.localstack\
    Solution:
    - Update s3Client configuration: `forcePathStyle: true` - Removes the automatically added ".localhost" after the bucket name and using the correct URI to reach localstack.
